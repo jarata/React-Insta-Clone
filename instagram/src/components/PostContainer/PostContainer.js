@@ -8,7 +8,7 @@ const PostContainer = props => {
                 props.postData.map(post => {
                     return (
                         <div>
-                            <PostHeader />
+                            <PostHeader username={props.username} thumbnailUrl={props.thumbnailUrl} />
                             <Post />
                         </div>
 
