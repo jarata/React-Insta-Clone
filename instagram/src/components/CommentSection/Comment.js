@@ -1,12 +1,12 @@
 import React from 'react'
 
 const Comment = props => {
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             {
                 props.comments.map(comment => {
-                    console.log(comment);
+                    // console.log(comment);
                     return (
                         <div>
                             <p>{comment.username}</p>
