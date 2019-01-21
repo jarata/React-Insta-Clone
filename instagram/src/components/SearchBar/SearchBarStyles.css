@@ -1,0 +1,10 @@
+.searchbar-container {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
