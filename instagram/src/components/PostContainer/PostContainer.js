@@ -11,6 +11,7 @@ const PostContainer = props => {
                     return (
                         <div>
                             <PostHeader username={post.username} thumbnailUrl={post.thumbnailUrl} />
+                            <Post imageUrl={post.imageUrl} />
                         </div>
                     )
                 })
