@@ -3,6 +3,7 @@ import PostHeader from './PostHeader'
 import Post from './Post'
 import Comment from '../CommentSection/Comment'
 import PropTypes from 'prop-types'
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap'
 
 const PostContainer = props => {
     // console.log(props)
@@ -12,11 +13,11 @@ const PostContainer = props => {
                 props.postData.map(post => {
                     // console.log(post)
                     return (
-                        <div>
+                        <Card>
                             <PostHeader username={post.username} thumbnailUrl={post.thumbnailUrl} />
                             <Post imageUrl={post.imageUrl} />
                             <Comment comments={post.comments} />
-                        </div>
+                        </Card>
                     )
                 })
             }
