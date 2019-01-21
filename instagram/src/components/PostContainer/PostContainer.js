@@ -1,4 +1,6 @@
 import React from 'react'
+import PostHeader from './PostHeader'
+import Post from './Post'
 
 const PostContainer = props => {
     console.log(props)
@@ -8,10 +10,8 @@ const PostContainer = props => {
                 props.postData.map(post => {
                     return (
                         <div>
-                            <PostHeader username={props.username} thumbnailUrl={props.thumbnailUrl} />
-                            <Post />
+                            <PostHeader username={post.username} thumbnailUrl={post.thumbnailUrl} />
                         </div>
-
                     )
                 })
             }
