@@ -1,6 +1,7 @@
 import React from 'react'
 import PostHeader from './PostHeader'
 import Post from './Post'
+import Comment from '../CommentSection/Comment'
 
 const PostContainer = props => {
     console.log(props)
@@ -12,6 +13,7 @@ const PostContainer = props => {
                         <div>
                             <PostHeader username={post.username} thumbnailUrl={post.thumbnailUrl} />
                             <Post imageUrl={post.imageUrl} />
+                            <Comment comments={post.comments} />
                         </div>
                     )
                 })
