@@ -31,7 +31,7 @@ class App extends Component {
         super(props);
         this.state = {
             postData: [],
-            likes: ''
+            likes: props.likes
         };
     }
     componentDidMount() {
@@ -39,7 +39,7 @@ class App extends Component {
     }
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value })
-        console.log(event.target.name)
+        // console.log(event.target.name)
     }
     likeIncrement = event => {
         event.preventDefault();

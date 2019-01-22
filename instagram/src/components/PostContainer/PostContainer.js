@@ -11,12 +11,11 @@ const PostContainer = props => {
         <div>
             {
                 props.postData.map(post => {
-                    console.log(post)
+                    // console.log(post)
                     return (
                         <Card>
-                            <PostHeader username={post.username} thumbnailUrl={post.thumbnailUrl} />
-                            <Post imageUrl={post.imageUrl} />
-                            <Comment likeIncrement={props.likeIncrement} likes={post.likes} comments={post.comments} />
+                            <Post thumbnailUrl={post.thumbnailUrl} imageUrl={post.imageUrl} username={props.username} />
+                            <Comment likeIncrement={props.likeIncrement} comments={post.comments} />
                         </Card>
                     )
                 })
