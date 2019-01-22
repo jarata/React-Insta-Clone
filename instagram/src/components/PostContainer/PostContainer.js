@@ -16,7 +16,7 @@ const PostContainer = props => {
                         <Card>
                             <PostHeader username={post.username} thumbnailUrl={post.thumbnailUrl} />
                             <Post imageUrl={post.imageUrl} />
-                            <Comment comments={post.comments} />
+                            <Comment likes={post.likes} comments={post.comments} />
                         </Card>
                     )
                 })

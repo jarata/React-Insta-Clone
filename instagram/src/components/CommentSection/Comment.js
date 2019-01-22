@@ -1,12 +1,12 @@
 import React from 'react'
+import Likes from './Likes'
 
 const Comment = props => {
     // console.log(props)
     return (
         <div>
             <div>
-                <i className="far fa-heart"></i>
-                <i className="far fa-comment"></i>
+                <Likes likes={props.likes} />
             </div>
             {
                 props.comments.map(comment => {
