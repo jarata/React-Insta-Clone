@@ -5,6 +5,7 @@ function Likes(props) {
         <div>
             <i className="far fa-heart"></i>
             <i className="far fa-comment"></i>
+            {props.likes}
         </div>
     )
 }
