@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap'
 
 const PostHeader = props => {
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             <img src={props.thumbnailUrl} alt="thumb-url" />

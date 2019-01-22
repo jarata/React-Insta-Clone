@@ -6,7 +6,7 @@ const Comment = props => {
     return (
         <div>
             <div>
-                <Likes likes={props.likes} />
+                <Likes likeIncrement={props.likeIncrement} likes={props.likes} />
             </div>
             {
                 props.comments.map(comment => {

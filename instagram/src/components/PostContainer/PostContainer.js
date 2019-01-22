@@ -14,8 +14,8 @@ const PostContainer = props => {
                     // console.log(post)
                     return (
                         <Card>
-                            <Post thumbnailUrl={post.thumbnailUrl} imageUrl={post.imageUrl} username={props.username} />
-                            <Comment likeIncrement={props.likeIncrement} comments={post.comments} />
+                            <Post thumbnailUrl={post.thumbnailUrl} imageUrl={post.imageUrl} username={post.username} />
+                            <Comment likeIncrement={props.likeIncrement} comments={post.comments} likes={post.likes} />
                         </Card>
                     )
                 })
