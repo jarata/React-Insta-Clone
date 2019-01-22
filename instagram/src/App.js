@@ -30,21 +30,26 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            postData: []
+            postData: [],
+            likes: ''
         };
     }
     componentDidMount() {
-        console.log(this.state.postData)
         this.setState({ postData: dummyData })
+    }
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value })
+        console.log(event.target.name)
     }
     likeIncrement = event => {
         event.preventDefault();
+        this.setState(prevState => ({ likes: this.state.likes + 1 }))
     }
     render() {
         return (
             <div className='App'>
                 <SearchBar />
-                <PostContainer postData={this.state.postData} />
+                <PostContainer postData={this.state.postData} likeIncrement={this.likeIncrement} />
             </div>
         )
     }
