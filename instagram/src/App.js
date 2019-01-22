@@ -30,8 +30,15 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            postData: dummyData
-        }
+            postData: []
+        };
+    }
+    componentDidMount() {
+        console.log(this.state.postData)
+        this.setState({ postData: dummyData })
+    }
+    likeIncrement = event => {
+        event.preventDefault();
     }
     render() {
         return (
