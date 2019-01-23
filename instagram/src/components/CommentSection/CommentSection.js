@@ -7,7 +7,7 @@ import Comment from './Comment'
 class CommentSection extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props)
+        // console.log(props)
         this.state = {
             comments: props.comments
         }
@@ -22,7 +22,7 @@ class CommentSection extends React.Component {
                 {/*<Likes />*/}
                 {
                     this.state.comments.map(comment => {
-                        return <Comment key={comment} comment={comment} />
+                        return <Comment key={username} comment={comment} />
                     })
                 }
                 {/*<AddComment />*/}
