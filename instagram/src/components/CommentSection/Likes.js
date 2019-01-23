@@ -1,9 +1,10 @@
 import React from 'react'
 
 function Likes(props) {
+    console.log(props)
     return (
         <div>
-            <i className="far fa-heart" onClick={() => props.likeIncrement(props.likes)}></i>
+            <i className="far fa-heart" onClick={props.likeIncrement}></i>
             <i className="far fa-comment"></i>
             {props.likes}
         </div>

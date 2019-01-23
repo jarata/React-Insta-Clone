@@ -8,7 +8,7 @@ const Post = props => {
         <div>
             <PostHeader username={props.post.username} thumbnailUrl={props.post.thumbnailUrl} />
             <img src={props.post.imageUrl} alt="post-img" />
-            <CommentSection postId={props.post.username} comments={props.post.comments} />
+            <CommentSection postId={props.post.username} likes={props.post.likes} comments={props.post.comments} />
         </div>
     )
 }

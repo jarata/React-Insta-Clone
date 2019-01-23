@@ -8,14 +8,14 @@ class CommentSection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            comments: props.comments
-
+            comments: props.comments,
+            likes: props.likes
         }
     }
-    // likeIncrement = (banana) => {
-    //     console.log(banana)
-    //     this.setState(prevState => ({ likes: banana + 1 }))
-    // }
+    likeIncrement = () => {
+        let likes = this.state.likes + 1;
+        this.setState({ likes })
+    }
     componentDidMount() {
         const id = this.props.postId;
         if (localStorage.getItem(id)) {
@@ -36,7 +36,8 @@ class CommentSection extends React.Component {
     render() {
         return (
             <div>
-                <Comment comments={this.state.comments} />
+                <Likes likes={this.state.likes} />
+                <Comment comments={this.state.comments} likeIncrement={this.likeIncrement}/>
             </div>
         )
     }

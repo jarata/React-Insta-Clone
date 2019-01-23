@@ -5,9 +5,6 @@ const Comment = props => {
     // console.log(props)
     return (
         <div>
-            <div>
-                <Likes likeIncrement={props.likeIncrement} likes={props.likes} />
-            </div>
             {
                 props.comments.map(comment => {
                     // console.log(comment);
