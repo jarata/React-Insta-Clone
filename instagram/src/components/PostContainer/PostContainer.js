@@ -9,7 +9,7 @@ const PostContainer = props => {
         <div>
             {
                 props.postData.map(post => {
-                    <Post
+                    return <Post key={post.imageUrl} post={post} />
                 })
             }
             {/*{*/}

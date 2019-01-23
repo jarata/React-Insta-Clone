@@ -8,8 +8,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            postData: [],
-            likes: 0
+            postData: []
         };
     }
     componentDidMount() {
@@ -19,15 +18,11 @@ class App extends Component {
         this.setState({ [event.target.name]: event.target.value })
         // console.log(event.target.name)
     }
-    likeIncrement = (banana) => {
-        console.log(banana)
-        this.setState(prevState => ({ likes: banana + 1 }))
-    }
     render() {
         return (
             <div className='App'>
                 <SearchBar />
-                <PostContainer postData={this.state.postData} likeIncrement={this.likeIncrement} />
+                <PostContainer postData={this.state.postData} />
             </div>
         )
     }
