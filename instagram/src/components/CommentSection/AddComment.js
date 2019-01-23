@@ -5,7 +5,7 @@ const AddComment = props => {
     return (
         <div>
             <input type="text" value={props.newComment} placeholder="Add new comment..." onChange={props.handleChange}/>
-            <i className="fas fa-ellipsis-h"></i>
+            <i className="fas fa-ellipsis-h" onClick={props.addComment}></i>
         </div>
     )
 }

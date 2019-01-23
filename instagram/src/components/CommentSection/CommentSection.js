@@ -53,7 +53,7 @@ class CommentSection extends React.Component {
             <div>
                 <Likes likes={this.state.likes} likeIncrement={this.likeIncrement} />
                 <Comment comments={this.state.comments} />
-                <AddComment newComment={this.newComment} />
+                <AddComment addComment={this.addComment} newComment={this.newComment} />
             </div>
         )
     }
