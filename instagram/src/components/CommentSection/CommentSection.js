@@ -13,6 +13,7 @@ class CommentSection extends React.Component {
         }
     }
     likeIncrement = () => {
+        console.log('likes working')
         let likes = this.state.likes + 1;
         this.setState({ likes })
     }
@@ -36,8 +37,8 @@ class CommentSection extends React.Component {
     render() {
         return (
             <div>
-                <Likes likes={this.state.likes} />
-                <Comment comments={this.state.comments} likeIncrement={this.likeIncrement}/>
+                <Likes likes={this.state.likes} likeIncrement={this.likeIncrement} />
+                <Comment comments={this.state.comments} />
             </div>
         )
     }
