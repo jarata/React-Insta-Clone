@@ -14,7 +14,6 @@ class CommentSection extends React.Component {
         }
     }
     likeIncrement = () => {
-        console.log('likes working')
         let likes = this.state.likes + 1;
         this.setState({ likes })
     }
@@ -35,13 +34,12 @@ class CommentSection extends React.Component {
         );
     };
     handleChange = event => {
-        this.setState({ [event.target.name]: event.target.value })
-        // console.log(event.target.name)
+        this.setState({ newComment: event.target.value })
     }
     addComment = event => {
         event.preventDefault();
         const newComment = { username: 'Justin', text: this.state.newComment }
-        const comments = this.state.comments.slice();
+        let comments = this.state.comments.slice();
         comments.push(newComment);
         this.setState({ comments, newComment: '' });
         setTimeout(() => {
@@ -53,7 +51,7 @@ class CommentSection extends React.Component {
             <div>
                 <Likes likes={this.state.likes} likeIncrement={this.likeIncrement} />
                 <Comment comments={this.state.comments} />
-                <AddComment addComment={this.addComment} newComment={this.newComment} />
+                <AddComment handleChange={this.handleChange} addComment={this.addComment} newComment={this.newComment} />
             </div>
         )
     }

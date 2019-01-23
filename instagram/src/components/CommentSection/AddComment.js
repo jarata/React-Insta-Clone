@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 const AddComment = props => {
     return (
-        <div>
+        <form onSubmit={props.addComment}>
             <input type="text" value={props.newComment} placeholder="Add new comment..." onChange={props.handleChange}/>
-            <i className="fas fa-ellipsis-h" onClick={props.addComment}></i>
-        </div>
+            <i className="fas fa-ellipsis-h"></i>
+        </form>
     )
 }
 
