@@ -14,10 +14,6 @@ class App extends Component {
     componentDidMount() {
         this.setState({ postData: dummyData })
     }
-    handleChange = event => {
-        this.setState({ [event.target.name]: event.target.value })
-        // console.log(event.target.name)
-    }
     render() {
         return (
             <div className='App'>

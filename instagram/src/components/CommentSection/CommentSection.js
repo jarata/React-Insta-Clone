@@ -9,7 +9,8 @@ class CommentSection extends React.Component {
         super(props);
         this.state = {
             comments: props.comments,
-            likes: props.likes
+            likes: props.likes,
+            newComment: ''
         }
     }
     likeIncrement = () => {
@@ -27,18 +28,32 @@ class CommentSection extends React.Component {
             this.setComments();
         }
     }
-
     setComments = () => {
         localStorage.setItem(
             this.props.postId,
             JSON.stringify(this.state.comments)
         );
     };
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value })
+        // console.log(event.target.name)
+    }
+    addComment = event => {
+        event.preventDefault();
+        const newComment = { username: 'Justin', text: this.state.newComment }
+        const comments = this.state.comments.slice();
+        comments.push(newComment);
+        this.setState({ comments, newComment: '' });
+        setTimeout(() => {
+            this.setComments();
+        }, 500);
+    }
     render() {
         return (
             <div>
                 <Likes likes={this.state.likes} likeIncrement={this.likeIncrement} />
                 <Comment comments={this.state.comments} />
+                <AddComment newComment={this.newComment} />
             </div>
         )
     }
