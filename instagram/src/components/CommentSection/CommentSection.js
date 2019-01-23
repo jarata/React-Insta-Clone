@@ -7,25 +7,36 @@ import Comment from './Comment'
 class CommentSection extends React.Component {
     constructor(props) {
         super(props);
-        // console.log(props)
         this.state = {
             comments: props.comments
+
         }
     }
     // likeIncrement = (banana) => {
     //     console.log(banana)
     //     this.setState(prevState => ({ likes: banana + 1 }))
     // }
+    componentDidMount() {
+        const id = this.props.postId;
+        if (localStorage.getItem(id)) {
+            this.setState({
+                comments: JSON.parse(localStorage.getItem(this.props.postId))
+            });
+        } else {
+            this.setComments();
+        }
+    }
+
+    setComments = () => {
+        localStorage.setItem(
+            this.props.postId,
+            JSON.stringify(this.state.comments)
+        );
+    };
     render() {
         return (
             <div>
-                {/*<Likes />*/}
-                {
-                    this.state.comments.map(comment => {
-                        return <Comment key={username} comment={comment} />
-                    })
-                }
-                {/*<AddComment />*/}
+                <Comment comments={this.state.comments} />
             </div>
         )
     }

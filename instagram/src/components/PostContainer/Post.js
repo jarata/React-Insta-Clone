@@ -4,12 +4,11 @@ import PostHeader from './PostHeader'
 import CommentSection from '../CommentSection/CommentSection'
 
 const Post = props => {
-    // console.log(props)
     return (
         <div>
             <PostHeader username={props.post.username} thumbnailUrl={props.post.thumbnailUrl} />
             <img src={props.post.imageUrl} alt="post-img" />
-            <CommentSection key={this.state.post.username} comments={props.post.comments} />
+            <CommentSection postId={props.post.username} comments={props.post.comments} />
         </div>
     )
 }
