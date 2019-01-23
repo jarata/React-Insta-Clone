@@ -1,9 +1,7 @@
 import React from 'react'
 import PostHeader from './PostHeader'
 import Post from './Post'
-import Comment from '../CommentSection/Comment'
 import PropTypes from 'prop-types'
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap'
 
 const PostContainer = props => {
     // console.log(props)
@@ -11,15 +9,20 @@ const PostContainer = props => {
         <div>
             {
                 props.postData.map(post => {
-                    // console.log(post)
-                    return (
-                        <Card>
-                            <Post thumbnailUrl={post.thumbnailUrl} imageUrl={post.imageUrl} username={post.username} />
-                            <Comment likeIncrement={props.likeIncrement} comments={post.comments} likes={post.likes} />
-                        </Card>
-                    )
+                    <Post
                 })
             }
+            {/*{*/}
+                {/*props.postData.map(post => {*/}
+                    {/*// console.log(post)*/}
+                    {/*return (*/}
+                        {/*<Card>*/}
+                            {/*<Post thumbnailUrl={post.thumbnailUrl} imageUrl={post.imageUrl} username={post.username} />*/}
+                            {/*<CommentSection likeIncrement={props.likeIncrement} comments={post.comments} likes={post.likes} />*/}
+                        {/*</Card>*/}
+                    {/*)*/}
+                {/*})*/}
+            {/*}*/}
         </div>
     )
 }
