@@ -5,10 +5,7 @@ import styled from 'styled-components'
 const PostUsername = styled.div`
     display: flex;
     align-items: center;
-    font-weight: bold;
-    font-size: 1.0rem;
-    justify-content: flex-start;
-    padding: 15px 15px;
+    padding: 15px;
 `
 const PostThumb = styled.img`
     -webkit-border-radius: 50%;
@@ -16,7 +13,12 @@ const PostThumb = styled.img`
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    //padding: 15px 15px;
+`
+const PostUser = styled.div`
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.0rem;
+    padding: 0px 10px;
 `
 
 const PostHeader = props => {
@@ -24,7 +26,7 @@ const PostHeader = props => {
     return (
         <PostUsername>
             <PostThumb src={props.thumbnailUrl} alt="thumb-url" />
-            {props.username}
+            <PostUser>{props.username}</PostUser>
         </PostUsername>
     )
 }

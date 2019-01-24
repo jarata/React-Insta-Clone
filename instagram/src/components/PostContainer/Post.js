@@ -10,11 +10,15 @@ const PostCard = styled.div`
     width: 600px;
     margin: 0 auto;
 `
+const PostImg = styled.img`
+    width: 100%;
+    height: auto;
+`
 const Post = props => {
     return (
         <PostCard>
             <PostHeader username={props.post.username} thumbnailUrl={props.post.thumbnailUrl} />
-            <img src={props.post.imageUrl} alt="post-img" />
+            <PostImg src={props.post.imageUrl} alt="post-img" />
             <CommentSection postId={props.post.username} likes={props.post.likes} comments={props.post.comments} />
         </PostCard>
     )
