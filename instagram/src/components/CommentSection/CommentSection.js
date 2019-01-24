@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Likes from './Likes'
 import AddComment from './AddComment'
 import Comment from './Comment'
+import styled from 'styled-components'
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -76,12 +77,16 @@ class CommentSection extends React.Component {
     // }
     render() {
         return (
-            <div>
+            <CommentContainer>
                 <Likes likes={this.state.likes} likeIncrement={this.likeIncrement} />
                 <Comment comments={this.state.comments} />
                 <AddComment handleChange={this.handleChange} addComment={this.addComment} newComment={this.newComment} />
-            </div>
+            </CommentContainer>
         )
     }
 }
 export default CommentSection;
+
+const CommentContainer = styled.div`
+  border: 1px solid red;
+`
