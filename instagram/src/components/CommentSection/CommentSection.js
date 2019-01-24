@@ -34,18 +34,37 @@ class CommentSection extends React.Component {
         );
     };
     handleChange = event => {
-        this.setState({ newComment: event.target.value })
+        event.preventDefault();
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
+    // handleChange = event => {
+    //     this.setState({ newComment: event.target.value })
+    // }
     addComment = event => {
         event.preventDefault();
-        const newComment = { username: 'Justin', text: this.state.newComment }
-        let comments = this.state.comments.slice();
+        const newComment = {
+            text: this.state.newComment,
+            username: 'justin'
+        }
+        const comments = this.state.comments.slice();
         comments.push(newComment);
-        this.setState({ comments, newComment: '' });
-        setTimeout(() => {
-            this.setComments();
-        }, 500);
+        this.setState({
+            comments,
+            newComment: ''
+        })
     }
+    // addComment = event => {
+    //     event.preventDefault();
+    //     const newComment = { username: 'Justin', text: this.state.newComment }
+    //     let comments = this.state.comments.slice();
+    //     comments.push(newComment);
+    //     this.setState({ comments, newComment: '' });
+    //     setTimeout(() => {
+    //         this.setComments();
+    //     }, 500);
+    // }
     render() {
         return (
             <div>

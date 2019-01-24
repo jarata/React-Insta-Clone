@@ -1,5 +1,4 @@
 import React from 'react'
-import PostHeader from './PostHeader'
 import Post from './Post'
 import PropTypes from 'prop-types'
 
