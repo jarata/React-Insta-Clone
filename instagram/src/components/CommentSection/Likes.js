@@ -5,12 +5,11 @@ const ButtonsContainer = styled.div`
     display: flex;
     justify-content: space-between;
     width: 70px;
-    margin: 10px 10px;
+    margin-bottom: 5px;
     font-size: 25px;
 `
 const LikesCounter = styled.div`
     display: flex;
-    margin: 10px 10px;
     font-size: 0.9rem;
     font-weight: bold;
 `

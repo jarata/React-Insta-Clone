@@ -5,6 +5,10 @@ import AddComment from './AddComment'
 import Comment from './Comment'
 import styled from 'styled-components'
 
+const CommentContainer = styled.div`
+  padding: 10px;
+`
+
 class CommentSection extends React.Component {
     constructor(props) {
         super(props);
@@ -49,7 +53,7 @@ class CommentSection extends React.Component {
             text: this.state.newComment,
             username: 'justin'
         }
-        const comments = this.state.comments.slice();
+        let comments = this.state.comments.slice();
         comments.push(newComment);
         this.setState({
             comments,
@@ -86,7 +90,3 @@ class CommentSection extends React.Component {
     }
 }
 export default CommentSection;
-
-const CommentContainer = styled.div`
-  border: 1px solid red;
-`
