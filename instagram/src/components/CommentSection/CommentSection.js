@@ -22,7 +22,6 @@ class CommentSection extends React.Component {
         let likes = this.state.likes + 1;
         this.setState({ likes })
     }
-    // Mounting comments fom state
     componentDidMount() {
         const id = this.props.postId;
         if (localStorage.getItem(id)) {
@@ -39,46 +38,19 @@ class CommentSection extends React.Component {
             JSON.stringify(this.state.comments)
         );
     };
-    // change handler for adding new comments
-    handleChange = event => {
-        event.preventDefault();
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-    // this addComment function made more sense to me after I saw it done in peer code review
     addComment = event => {
         event.preventDefault();
-        const newComment = {
-            text: this.state.newComment,
-            username: 'justin'
-        }
+        const newComment = { username: 'Justin', text: this.state.newComment }
         let comments = this.state.comments.slice();
         comments.push(newComment);
-        this.setState({
-            comments,
-            newComment: ''
-        })
+        this.setState({ comments, newComment: '' });
+        setTimeout(() => {
+            this.setComments();
+        }, 500);
     }
-    // old change handler that went with the other add Comment function below
-
-    // handleChange = event => {
-    //     this.setState({ newComment: event.target.value })
-    // }
-
-    // This addComment code was used with PM problem solving code. also reflects solution code, but this is still hard
-    // for me to understand.
-
-    // addComment = event => {
-    //     event.preventDefault();
-    //     const newComment = { username: 'Justin', text: this.state.newComment }
-    //     let comments = this.state.comments.slice();
-    //     comments.push(newComment);
-    //     this.setState({ comments, newComment: '' });
-    //     setTimeout(() => {
-    //         this.setComments();
-    //     }, 500);
-    // }
+    handleChange = event => {
+        this.setState({ newComment: event.target.value })
+    }
     render() {
         return (
             <CommentContainer>

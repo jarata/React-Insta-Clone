@@ -1,13 +1,32 @@
 import React from 'react'
 import SearchBarStyles from './SearchBarStyles.css'
+import styled from 'styled-components'
 
+const SearchBarContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+`
+const Logo = styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    border: 1px solid red;
+`
+const Bar = styled.div`
+    border: 1px solid black;
+    height: 50px;
+    margin: 20px;
+`
 const SearchBar = () => {
     return (
-        <div className="searchbar-container">
-            <div className="logo">
+        <SearchBarContainer>
+            <Logo>
                 <i className="fab fa-instagram"></i>
-                <h1>Instagram</h1>
-            </div>
+                <Bar></Bar>
+                Instagram
+            </Logo>
             <div>
                 <input type="text" placeholder="Search" />
             </div>
@@ -16,7 +35,7 @@ const SearchBar = () => {
                 <i className="far fa-heart"></i>
                 <i className="far fa-user"></i>
             </div>
-        </div>
+        </SearchBarContainer>
     )
 }
 

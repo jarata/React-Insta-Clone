@@ -8,7 +8,7 @@ const PostCard = styled.div`
     border: 1px solid lightgrey;
     border-radius: 5px;
     width: 600px;
-    margin: 0 auto;
+    margin: 25px auto;
 `
 const PostImg = styled.img`
     width: 100%;
